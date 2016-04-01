@@ -6,6 +6,7 @@ int division(int a, int b);
 int suma(int a, int b);
 int leerValor1();
 int leerValor2();
+int potencia(int base, int exponente);
 void menu(void);
 
 int main(void)
@@ -21,7 +22,7 @@ int multiplicacion(int a, int b) {
         salida = salida + a;
         cursor = cursor + 1;
     }
-    printf("Resultado de la multiplicacion de %d x %d = %d\n\n", a, b, salida);
+    //printf("Resultado de la multiplicacion de %d x %d = %d\n\n", a, b, salida);
     return salida;
 }
 
@@ -73,9 +74,30 @@ int leerValor2(){
 	return b;
 }
 
+int potencia(int base, int exponente){
+	
+	int aux = 1;
+	
+	if (exponente != 0 && base != 0){
+		aux = base;
+		int bandera = exponente - 1; // se decrementa en un valor para sincronizar con la cantidad de calculos
+		
+		while(bandera > 0){
+			aux = multiplicacion(aux, base);
+			
+			bandera--;
+		}
+	}else if(exponente == 0 && base == 0){
+		aux = 0;
+	}
+	
+	printf("%d elevado a la %d es %d\n", base, exponente, aux);
+	return aux;
+}
+
 void menu(void) {
     int opcion = 0, a = 0, b = 0, c = 0, d = 0;
-    printf("Opciones Practicas\n\n1-Suma \n2-Multiplicacion \n3-Division \n4-Resta \n99-Salir\n");
+    printf("Opciones Practicas\n\n1-Suma \n2-Multiplicacion \n3-Division \n4-Resta \n5-Potencia \n99-Salir\n");
 
     scanf("%d", & opcion);
     getchar();
@@ -96,6 +118,8 @@ void menu(void) {
             a = leerValor1();
 			b = leerValor2();
             c = multiplicacion(a, b);
+            
+            printf("Resultado de la multiplicacion de %d x %d = %d\n\n", a, b, c);
             getchar();
             
         } else if (opcion == 3) {
@@ -114,6 +138,15 @@ void menu(void) {
 			a = leerValor1();
 			b = leerValor2();
 			c = resta(a, b);
+            getchar();
+
+        } else if (opcion == 5) {
+            system("cls");
+            printf("Potencia\n");
+
+			a = leerValor1();
+			b = leerValor2();
+			c = potencia(a, b);
             getchar();
 
         }
