@@ -97,7 +97,26 @@ int potencia(int base, int exponente){
 
 void menu(void) {
     int opcion = 0, a = 0, b = 0, c = 0, d = 0;
-    printf("Opciones Practicas\n\n1-Suma \n2-Multiplicacion \n3-Division \n4-Resta \n5-Potencia \n99-Salir\n");
+    
+    printf("\n         ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป");
+	printf("\n         บ               :: C A L C U L A D O R A ::                 บ");
+	printf("\n         ฬอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออน");
+	printf("\n         บ                                                           บ");
+	printf("\n         บ       1.- Suma                     2.- Multiplicacion     บ");
+	printf("\n         บ                                                           บ");
+	printf("\n         บ       3.- Division                 4.- Resta              บ");
+	printf("\n         บ                                                           บ");
+	printf("\n         บ       5.- Potencia                 6.- Calculos           บ");
+	printf("\n         บ                                        Cientificos        บ");
+	printf("\n         บ                                        Avanzados          บ");
+	printf("\n         บ                                                           บ");
+	printf("\n         บ                        99.- Salir                         บ");
+	printf("\n         ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ");
+	printf("\n                     Nota: Solo funciona con numeros enteros");
+	printf("\n");
+	printf("\n                              Elija una opcion: ");
+	
+	//printf("Opciones Practicas\n\n1-Suma \n2-Multiplicacion \n3-Division \n4-Resta \n5-Potencia \n99-Salir\n");
 
     scanf("%d", & opcion);
     getchar();
@@ -147,6 +166,12 @@ void menu(void) {
 			a = leerValor1();
 			b = leerValor2();
 			c = potencia(a, b);
+            getchar();
+        
+		} else if (opcion == 6) {
+            system("cls");
+            printf("No implementado\n");
+;
             getchar();
 
         }
